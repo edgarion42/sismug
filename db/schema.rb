@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140529194550) do
+ActiveRecord::Schema.define(version: 20140529215918) do
 
   create_table "gestors", force: true do |t|
     t.string   "gnombre1"
@@ -33,5 +33,20 @@ ActiveRecord::Schema.define(version: 20140529194550) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "personas", force: true do |t|
+    t.string   "nombre1"
+    t.string   "nombre2"
+    t.string   "apellido1"
+    t.string   "apellido2"
+    t.string   "direccion"
+    t.string   "fecha_nacimiento"
+    t.string   "telefono"
+    t.string   "curp"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "personas", ["curp"], name: "index_personas_on_curp", unique: true
 
 end
