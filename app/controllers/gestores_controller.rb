@@ -1,0 +1,2 @@
+class GestoresController < ApplicationController
+end
