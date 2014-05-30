@@ -1,0 +1,23 @@
+<% provide(:title, 'Todas las personas') %>
+<h1>Todas las personas</h1>
+
+<%= link_to "Añade mas personas", addpersona_path, class: "btn btn-large btn-primary", id: "botonazul" %>
+
+<%= will_paginate %>
+
+<ul class="personas">
+  <% @personas.each do |persona| %>
+    <li>
+      <%= link_to persona do %>
+      	<%= persona.nombre1 %>
+      	<%= persona.nombre2 %>
+      	<%= persona.apellido1 %>
+      	<%= persona.apellido2 %>
+      	| <%= link_to "Eliminar", persona, method: :delete,
+                                  data: { confirm: "¿Seguro?" } %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate %>
