@@ -1,0 +1,22 @@
+<% provide(:title, "Log in") %>
+<div class="center hero-unit">
+  <h1>Bienvenido a SisMUG</h1>
+  <h2>
+    El Sistema Municipal Unico de Gestion
+  </h2>
+</div>
+<div class="row">
+  <div class="span6 offset3">
+  	<h2>Inicia sesion para comenzar a administrar las gestiones</h2>
+    <%= form_for(:sesion, url: sesiones_path) do |f| %>
+
+      <%= f.label :gnombre1, "Nombre de Gestor" %>
+      <%= f.text_field :gnombre1 %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.submit "Iniciar Sesion", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

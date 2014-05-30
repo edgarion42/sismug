@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140529215918) do
+ActiveRecord::Schema.define(version: 20140530023216) do
 
   create_table "gestors", force: true do |t|
     t.string   "gnombre1"
@@ -24,7 +24,10 @@ ActiveRecord::Schema.define(version: 20140529215918) do
     t.datetime "updated_at"
     t.integer  "organo_id"
     t.string   "password_digest"
+    t.string   "remember_token"
   end
+
+  add_index "gestors", ["remember_token"], name: "index_gestors_on_remember_token"
 
   create_table "organos", force: true do |t|
     t.string   "onombre"

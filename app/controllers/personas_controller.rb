@@ -9,7 +9,7 @@ class PersonasController < ApplicationController
   end
 
   def create
-    @persona = Persona.new(persona_params)    # Not the final implementation!
+    @persona = Persona.new(persona_params)
     if @persona.save
     	flash[:success] = "¡Persona Creada con Exito!"
       redirect_to @persona
