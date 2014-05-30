@@ -3,6 +3,7 @@ class GestorsController < ApplicationController
 	
   def show
   	@gestor = Gestor.find(params[:id])
+    @gestions = @gestor.gestions.paginate(page: params[:page])
   end
 
   def new
@@ -11,7 +12,7 @@ class GestorsController < ApplicationController
 
   private
 
-    def signed_in_user
-      redirect_to root_path, notice: "Por favor logueate" unless signed_in?
-    end
+    #def signed_in_user
+      #redirect_to root_path, notice: "Por favor logueate" unless signed_in?
+    #end
 end

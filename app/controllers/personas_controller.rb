@@ -3,6 +3,8 @@ class PersonasController < ApplicationController
   
   def show
   	@persona = Persona.find(params[:id])
+    @gestions = @persona.gestions.paginate(page: params[:page])
+    @gestion = current_user.gestions.build if signed_in?
   end
 
   def new

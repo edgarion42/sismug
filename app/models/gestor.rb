@@ -1,5 +1,6 @@
 class Gestor < ActiveRecord::Base
 	belongs_to :organo
+  has_many :gestions
 	has_secure_password
 	before_create :create_remember_token
 

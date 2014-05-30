@@ -9,5 +9,21 @@
       	<%= @persona.apellido2 %>
       </h1>
     </section>
+    <div class="row">
+      <aside class="span4">
+        <section>
+          <%= render 'shared/gestion_form' %>
+        </section>
+      </aside>
+    </div>
   </aside>
+  <div class="span8">
+    <% if @persona.gestions.any? %>
+      <h3>Gestiones (<%= @persona.gestions.count %>)</h3>
+      <ol class="gestions">
+        <%= render @gestions %>
+      </ol>
+      <%= will_paginate @gestions %>
+    <% end %>
+  </div>
 </div>

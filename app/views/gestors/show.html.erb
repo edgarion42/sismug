@@ -10,4 +10,13 @@
       </h1>
     </section>
   </aside>
+  <div class="span8">
+    <% if @gestor.gestions.any? %>
+      <h3>Gestiones (<%= @gestor.gestions.count %>)</h3>
+      <ol class="gestions">
+        <%= render @gestions %>
+      </ol>
+      <%= will_paginate @gestions %>
+    <% end %>
+  </div>
 </div>

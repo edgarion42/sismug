@@ -2,6 +2,7 @@ Sismug::Application.routes.draw do
   resources :gestors
 	resources :personas
 	resources :sesiones, only: [:new, :create, :destroy]
+  resources :gestions, only: [:create, :destroy]
   root  'sesiones#new'
   match '/addpersona',	to: 'personas#new',							 	via: 'get'
   match '/signup',      to: 'gestors#new',                via: 'get'

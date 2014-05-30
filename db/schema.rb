@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140530023216) do
+ActiveRecord::Schema.define(version: 20140530075330) do
+
+  create_table "gestions", force: true do |t|
+    t.string   "fecha_gestion"
+    t.text     "descripcion"
+    t.integer  "gestor_id"
+    t.integer  "persona_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "gestions", ["gestor_id"], name: "index_gestions_on_gestor_id"
+  add_index "gestions", ["persona_id", "created_at"], name: "index_gestions_on_persona_id_and_created_at"
 
   create_table "gestors", force: true do |t|
     t.string   "gnombre1"
