@@ -1,3 +1,36 @@
 <% provide(:title, 'Nueva Persona') %>
-<h1>Nueva Persona</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>Agregar una Nueva Persona</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@persona) do |f| %>
+    	<%= render 'shared/error_messages' %>
+
+      <%= f.label :nombre1, "Primer Nombre" %>
+      <%= f.text_field :nombre1 %>
+
+      <%= f.label :nombre2, "Segundo Nombre" %>
+      <%= f.text_field :nombre2 %>
+
+      <%= f.label :apellido1, "Apellido Paterno" %>
+      <%= f.text_field :apellido1 %>
+
+      <%= f.label :apellido2, "Apellido Materno" %>
+      <%= f.text_field :apellido2 %>
+
+      <%= f.label :direccion %>
+      <%= f.text_field :direccion %>
+
+      <%= f.label :fecha_nacimiento, "Fecha de Nacimiento" %>
+      <%= f.text_field :fecha_nacimiento %>
+
+      <%= f.label :telefono %>
+      <%= f.text_field :telefono %>
+
+      <%= f.label :curp, "CURP" %>
+      <%= f.text_field :curp %>
+
+      <%= f.submit "Dar de Alta", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

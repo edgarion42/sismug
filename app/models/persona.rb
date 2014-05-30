@@ -1,5 +1,5 @@
 class Persona < ActiveRecord::Base
-	before_save { self.curp = curp.downcase }
+	before_save { self.curp = curp.upcase }
 	validates :nombre1, presence: true, length: { maximum: 30 }
 	validates :nombre2, length: { maximum: 30 }
 	validates :apellido1, presence: true, length: { maximum: 30 }
